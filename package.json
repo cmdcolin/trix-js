@@ -1,0 +1,66 @@
+{
+  "name": "@gmod/trix",
+  "version": "0.0.1",
+  "description": "A trix index file format parser",
+  "main": "dist/index.js",
+  "repository": "github:GMOD/trix-js",
+  "author": {
+    "name": "Colin Diesh",
+    "email": "colin.diesh@gmail.com",
+    "url": "https://github.com/cmdcolin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/GMOD/trix-js",
+  "bugs": {
+    "url": "https://github.com/GMOD/trix-js/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "npm test -- --coverage",
+    "lint": "eslint src test",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean && npm run lint",
+    "preversion": "npm run lint && npm test && npm run build",
+    "version": "standard-changelog && git add CHANGELOG.md",
+    "postpublish": "git push origin master --follow-tags"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/runtime": "^7.3.1",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.5",
+    "documentation": "^9.1.1",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.4.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.1.0",
+    "jest-raw-loader": "^1.0.1",
+    "prettier": "^1.14.2",
+    "raw-loader": "^1.0.0",
+    "regenerator-runtime": "^0.12.1",
+    "rimraf": "^2.6.2",
+    "standard-changelog": "^2.0.7"
+  },
+  "keywords": [
+    "trix",
+    "autosql",
+    "genomics",
+    "bionode",
+    "biojs"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
